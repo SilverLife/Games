@@ -24,11 +24,14 @@
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GameData\CustomEvents.h" />
     <ClInclude Include="GameData\GameDataWithPlayer.h" />
     <ClInclude Include="GameData\Input.h" />
-    <ClInclude Include="Maps\Map.h" />
+    <ClInclude Include="Maps\LevelReader.h" />
+    <ClInclude Include="Maps\Levels\Level_1.h" />
     <ClInclude Include="Object\Block.h" />
     <ClInclude Include="Object\BlockPlaceholder.h" />
+    <ClInclude Include="Object\FilledPlaceholdersCounter.h" />
     <ClInclude Include="Object\Player.h" />
     <ClInclude Include="Object\Wall.h" />
   </ItemGroup>
@@ -91,6 +94,7 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)\Shared;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
