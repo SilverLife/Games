@@ -21,6 +21,9 @@
     <ClCompile Include="..\Shared\EventGameEngine\EventData\GlobalEventPusher.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Object\BlockPlaceholder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Object\Player.h">
@@ -39,6 +42,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GameData\Input.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\BlockPlaceholder.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

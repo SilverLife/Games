@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Shared\EventGameEngine\EventData\GlobalEventPusher.cpp" />
+    <ClCompile Include="Object\BlockPlaceholder.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -27,6 +28,7 @@
     <ClInclude Include="GameData\Input.h" />
     <ClInclude Include="Maps\Map.h" />
     <ClInclude Include="Object\Block.h" />
+    <ClInclude Include="Object\BlockPlaceholder.h" />
     <ClInclude Include="Object\Player.h" />
     <ClInclude Include="Object\Wall.h" />
   </ItemGroup>

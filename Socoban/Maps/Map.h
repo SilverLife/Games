@@ -4,6 +4,7 @@
 #include "../GameData/GameDataWithPlayer.h"
 #include "../Object/Wall.h"
 #include "../Object/Block.h"
+#include "../Object/BlockPlaceholder.h"
 #include <memory>
 
 using namespace EventGameEngine;
@@ -34,6 +35,17 @@ namespace Socoban
 			}
 
 			game->_field.AddObject(pos, new Object::Block);
+		}
+
+		for (int i = 0; i < 5; i++)
+		{
+			const Point pos(std::rand() % 20, std::rand() % 10);
+			if (!game->_field.IsEmpty(pos))
+			{
+				continue;
+			}
+
+			game->_field.AddObject(pos, new Object::BlockPlaceholder);
 		}
 
 		while (true)

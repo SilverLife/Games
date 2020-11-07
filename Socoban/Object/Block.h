@@ -4,6 +4,7 @@
 #include "EventGameEngine/FieldData/FieldObjectWithPos.h"
 #include "EventGameEngine/EventData/GlobalEventPusher.h"
 #include "Player.h"
+#include "BlockPlaceholder.h"
 
 using namespace EventGameEngine;
 
@@ -15,10 +16,10 @@ namespace Socoban
 		{
 		public:
 			Block()
-				: FieldData::FieldObject(177)
+				: FieldData::FieldObject(177, Shared::ConsoleHelper::Color::LightGreen)
 			{}
 
-			virtual int OnPassiveIntersect(Point active_pos, Point passive_pos, FieldData::FieldObject* intersected_object)
+			int OnPassiveIntersect(Point active_pos, Point passive_pos, FieldData::FieldObject* intersected_object) override
 			{
 				if (dynamic_cast<Player*>(intersected_object) != nullptr)
 				{
@@ -29,6 +30,17 @@ namespace Socoban
 				}
 				return 0;
 			}
+
+			int OnActiveIntersect(Point active_pos, Point passive_pos, FieldObject* intersected_object) override 
+			{
+				const auto block_placeholder = dynamic_cast<BlockPlaceholder*>(intersected_object);
+				if (block_placeholder != nullptr && !block_placeholder->IsBlockHere())
+				{
+					return FieldData::IntersectResult::IntResIsDead;
+				}
+				return 0; 
+			}
+
 		};
 	}
 }
